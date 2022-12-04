@@ -1,9 +1,9 @@
-try:
-    import micropip
-    micropip.install('ipywidgets')
-    micropip.install('ipympl')
-except:
-    pass
+# try:
+#     import micropip
+#     micropip.install('ipywidgets')
+#     micropip.install('ipympl')
+# except:
+#     pass
 
 from ipywidgets import interact, interactive, fixed, interact_manual
 import matplotlib.pyplot as plt
@@ -13,17 +13,21 @@ def f(a, b):
     x = a + 1j * b
     return x ** 2 + 1
 
-fix, ax = None, None
+# fig, ax = None, None
+old_figure = None
 
 def show_plots(real_part, imag_part):
-    global fix, ax
+    global old_figure
+    if old_figure is not None:
+        old_figure.close()
     
-    if fix is None:
-        fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(11, 7))
-
+    # if fig is None:
+    fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(11, 7))
+    # old_figure = fig
+    
     # delete previous graph
-    for i, j in [(0, 0), (0, 1), (1, 0), (1, 1)]:
-        ax[i][j].cla()
+    # for i, j in [(0, 0), (0, 1), (1, 0), (1, 1)]:
+    #     ax[i][j].cla()
 
     window_size = 5 # TODO: Change
     fig.tight_layout(pad=3.0)
@@ -77,8 +81,9 @@ def show_plots(real_part, imag_part):
         ax[i][j].set_ylim([-5, 5])
 
     print(f"Plot for the function f(X) = X^2 +8 *X + 12, in the point X = {real_part} + {imag_part} * i:")
-
-    # plt.show()
-    return None
+    
+    # old_figure = fig
+    plt.show()
+    return
 
 
