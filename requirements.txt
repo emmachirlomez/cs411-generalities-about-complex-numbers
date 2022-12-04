@@ -20,3 +20,6 @@ jupyterlite-xeus-sqlite==0.2.1
 plotly>=5,<6
 theme-darcula
 ipywidgets
+matplotlib
+numpy
+ipympl
