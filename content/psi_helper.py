@@ -1,10 +1,3 @@
-# try:
-#     import micropip
-#     micropip.install('ipywidgets')
-#     micropip.install('ipympl')
-# except:
-#     pass
-
 from ipywidgets import interact, interactive, fixed, interact_manual
 import matplotlib.pyplot as plt
 import numpy as np
@@ -88,9 +81,6 @@ def show_plots(real_part, imag_part):
         ax[i][j].legend()
         ax[i][j].set_ylim([-5, 5])
 
-    # print(f"Plot for the function f(X) = X^2 +8 *X + 12, in the point X = {real_part} + {imag_part} * i:")
-    
-    # old_figure = fig
     plt.show()
     return
 
@@ -122,8 +112,6 @@ def show_plots_real_solution(x_value):
     ax.grid(alpha=.9, which='both', linestyle='--')
     ax.legend()
     ax.set_ylim([-20, 20])
-
-    # print(f"Plot for the function f(X) = X^2 + 2 *X - 15, in the point X = {x_value}")
     
     plt.show()
     return
@@ -132,8 +120,7 @@ def show_more_difficult_example(real_part, imag_part):
     global old_figure
     if old_figure is not None:
         old_figure.close()
-    
-    # if fig is None:
+        
     fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(11, 7))
 
     window_size = 5 # TODO: Change
@@ -187,9 +174,6 @@ def show_more_difficult_example(real_part, imag_part):
         ax[i][j].legend()
         #ax[i][j].set_ylim([-5, 5])
 
-    # print(f"Plot for the function f(X) = X^2 +8 *X + 12, in the point X = {real_part} + {imag_part} * i:")
-    
-    # old_figure = fig
     plt.show()
     return
 
