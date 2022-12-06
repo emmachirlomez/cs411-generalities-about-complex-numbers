@@ -1,4 +1,4 @@
-from ipywidgets import interact, interactive, fixed, interact_manual
+from ipywidgets import interact, interactive, fixed, interact_manual, widgets
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import cm
@@ -89,7 +89,7 @@ def show_plots_real_solution(x_value):
     if old_figure is not None:
         old_figure.close()
 
-    fig, ax = plt.subplots(figsize=(9, 6))
+    fig, ax = plt.subplots(figsize=(8, 5))
 
     window_size = 8 # TODO: Change
     fig.tight_layout(pad=3.0)
@@ -177,6 +177,24 @@ def show_more_difficult_example(real_part, imag_part):
     plt.show()
     return
 
+def exercise_1():
+    x = widgets.IntSlider(min=-10, max=10, step=1, value=0)
+    interact(show_plots_real_solution, x_value=x);
+
+def exercise_2():
+    real_part = widgets.IntSlider(min=-10, max=10, step=1, value=0)
+    imag_part = widgets.IntSlider(min=-10, max=10, step=1, value=0)
+
+    interact(show_plots, real_part=real_part, imag_part=imag_part);
+
+def exercise_3():
+    real_part = widgets.IntSlider(min=-10, max=10, step=1, value=0)
+    imag_part = widgets.IntSlider(min=-10, max=10, step=1, value=0)
+
+    interact(show_more_difficult_example, real_part=real_part, imag_part=imag_part);
+
+def fun_fact():
+    plot_4d_function(lambda a: a**2+1, -2, 2, -2, 2)
 
 def get_coordonates_of_function(f, real_min=-10, real_max=10, img_min=-10, img_max=10):
     range_x = np.arange(real_min, real_max, 0.1)
@@ -207,4 +225,6 @@ def plot_4d_function(f, real_min=-10, real_max=10, img_min=-10, img_max=10):
     fig.colorbar(surf)
     
     plt.show();
+
+    
     
