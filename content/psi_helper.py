@@ -50,7 +50,7 @@ def show_plots(real_part, imag_part):
     ax[0][0].plot([real_part], [f(real_part, imag_part).imag], 'r.', markersize=15)
     ax[0][0].plot([real_part], [0.], 'g.', markersize=15)
     ax[0][0].set_xlabel("X.real")
-    ax[0][0].set_title(f"Change in the real value of X, with X.imag={imag_part}")
+    ax[0][0].set_title(f"Change in the real part of X, with X.imag={imag_part}")
     ax[0][0].set_xticks([i + real_part for i in range(-window_size, window_size + 1)])
 
     ax[0][1].plot(imag_window, real_f_from_imag_changing, label='f(X).real')
@@ -59,21 +59,21 @@ def show_plots(real_part, imag_part):
     ax[0][1].plot([imag_part], [f(real_part, imag_part).imag], 'r.', markersize=15)
     ax[0][1].plot([imag_part], [0.], 'g.', markersize=15)
     ax[0][1].set_xlabel("X.imag")
-    ax[0][1].set_title(f"Change in the imaginary value of X, with X.real={real_part}")
+    ax[0][1].set_title(f"Change in the imaginary part of X, with X.real={real_part}")
     ax[0][1].set_xticks([i + imag_part for i in range(-window_size, window_size + 1)])
 
     ax[1][0].plot(real_window, abs_f_from_real_changing, label='|f(X)|')
     ax[1][0].plot(real_window, 0 * imag_window, 'g', label='Target |f(X)| = 0')
     ax[1][0].plot([real_part], [np.abs(f(real_part, imag_part))], 'r.', markersize=15)
     ax[1][0].set_xlabel("X.real")
-    ax[1][0].set_title(f"Change in the real value of X, with X.imag={imag_part}")
+    ax[1][0].set_title(f"Change in the real part of X, with X.imag={imag_part}")
     ax[1][0].set_xticks([i + real_part for i in range(-window_size, window_size + 1)])
 
     ax[1][1].plot(imag_window, abs_f_from_imag_changing, label='|f(X)|')
     ax[1][1].plot(imag_window, 0 * imag_window, 'g', label='Target |f(X)| = 0')
     ax[1][1].plot([imag_part], [np.abs(f(real_part, imag_part))], 'r.', markersize=15)
     ax[1][1].set_xlabel("X.imag")
-    ax[1][1].set_title(f"Change in the imaginary value of X, with X.real={real_part}")
+    ax[1][1].set_title(f"Change in the imaginary part of X, with X.real={real_part}")
     ax[1][1].set_xticks([i + imag_part for i in range(-window_size, window_size + 1)])
     
     for i, j in [(0, 0), (0, 1), (1, 0), (1, 1)]:
@@ -106,7 +106,7 @@ def show_plots_real_solution(x_value):
     ax.plot([x_value], [0.], 'g.', markersize=15)
     ax.set_xlabel("X")
     ax.set_ylabel("f(X)")
-    ax.set_title(f"Change in the real value of X")
+    ax.set_title(f"Change in the real part of X")
     ax.set_xticks([i + x_value for i in range(-window_size, window_size + 1)])
   
     ax.grid(alpha=.9, which='both', linestyle='--')
@@ -143,7 +143,7 @@ def show_more_difficult_example(real_part, imag_part):
     ax[0][0].plot([real_part], [more_difficult_example(real_part, imag_part).imag], 'r.', markersize=15)
     ax[0][0].plot([real_part], [0.], 'g.', markersize=15)
     ax[0][0].set_xlabel("X.real")
-    ax[0][0].set_title(f"Change in the real value of X, with X.imag={imag_part}")
+    ax[0][0].set_title(f"Change in the real part of X, with X.imag={imag_part}")
     ax[0][0].set_xticks([i + real_part for i in range(-window_size, window_size + 1)])
 
     ax[0][1].plot(imag_window, real_f_from_imag_changing, label='f(X).real')
@@ -152,21 +152,21 @@ def show_more_difficult_example(real_part, imag_part):
     ax[0][1].plot([imag_part], [more_difficult_example(real_part, imag_part).imag], 'r.', markersize=15)
     ax[0][1].plot([imag_part], [0.], 'g.', markersize=15)
     ax[0][1].set_xlabel("X.imag")
-    ax[0][1].set_title(f"Change in the imaginary value of X, with X.real={real_part}")
+    ax[0][1].set_title(f"Change in the imaginary part of X, with X.real={real_part}")
     ax[0][1].set_xticks([i + imag_part for i in range(-window_size, window_size + 1)])
 
     ax[1][0].plot(real_window, abs_f_from_real_changing, label='|f(X)|')
     ax[1][0].plot(real_window, 0 * imag_window, 'g', label='Target |f(X)| = 0')
     ax[1][0].plot([real_part], [np.abs(more_difficult_example(real_part, imag_part))], 'r.', markersize=15)
     ax[1][0].set_xlabel("X.real")
-    ax[1][0].set_title(f"Change in the real value of X, with X.imag={imag_part}")
+    ax[1][0].set_title(f"Change in the real part of X, with X.imag={imag_part}")
     ax[1][0].set_xticks([i + real_part for i in range(-window_size, window_size + 1)])
 
     ax[1][1].plot(imag_window, abs_f_from_imag_changing, label='|f(X)|')
     ax[1][1].plot(imag_window, 0 * imag_window, 'g', label='Target |f(X)| = 0')
     ax[1][1].plot([imag_part], [np.abs(more_difficult_example(real_part, imag_part))], 'r.', markersize=15)
     ax[1][1].set_xlabel("X.imag")
-    ax[1][1].set_title(f"Change in the imaginary value of X, with X.real={real_part}")
+    ax[1][1].set_title(f"Change in the imaginary part of X, with X.real={real_part}")
     ax[1][1].set_xticks([i + imag_part for i in range(-window_size, window_size + 1)])
     
     for i, j in [(0, 0), (0, 1), (1, 0), (1, 1)]:
@@ -219,10 +219,10 @@ def plot_4d_function(f, real_min=-10, real_max=10, img_min=-10, img_max=10):
     
     surf = ax.plot_surface(X, Y, Z, facecolors=cm.jet(C), alpha =0.8)
 
-    ax.set_xlabel('a.real axis')
-    ax.set_ylabel('a.imag axis')
-    ax.set_zlabel('f(a).real axis')
-    fig.colorbar(surf)
+    ax.set_xlabel('real part')
+    ax.set_ylabel('imaginary part')
+    ax.set_zlabel('x^2 + 1')
+    # fig.colorbar(surf)
     
     plt.show();
 
