@@ -1,4 +1,4 @@
-from ipywidgets import interact, interactive, fixed, interact_manual, widgets
+from ipywidgets import interact, interactive, fixed, interact_manual, widgets, Textarea
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import cm
@@ -227,4 +227,43 @@ def plot_4d_function(f, real_min=-10, real_max=10, img_min=-10, img_max=10):
     plt.show();
 
     
+def real_quadratic_eq_input():
+    solution_1 =widgets.Textarea(
+        value='',
+        placeholder='Type something',
+        description='Solution x1:',
+        disabled=False
+    )
+    solution_2 =widgets.Textarea(
+        value='',
+        placeholder='Type something',
+        description='Solution x2:',
+        disabled=False
+    )
+    display(solution_1)
+    display(solution_2)
     
+def yes_or_no():
+    answer =widgets.Textarea(
+        value='',
+        placeholder='Type something',
+        description='Answer:',
+        disabled=False
+    )
+    display(answer)
+    
+def complex_eq_input():
+    real_x1 =widgets.Textarea(
+        value='',
+        placeholder='Type something',
+        description='Real:',
+        disabled=False
+    )
+    imag_x1 =widgets.Textarea(
+        value='',
+        placeholder='Type something',
+        description='Imaginary:',
+        disabled=False
+    )
+    display(real_x1)
+    display(imag_x1)
